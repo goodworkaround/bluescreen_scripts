@@ -1,7 +1,8 @@
-$tenantId = Read-Host "Enter Tenant ID"
-$clientId = Read-Host "Enter Client ID"
-$clientSecret = Read-Host "Enter Client Secret"
+$clientid = Read-Host
+$tenantid = Read-Host
+$clientsecret = Read-Host
 
-az login --service-principal --username $clientId --password $clientSecret --tenant $tenantId
+az account clear 
+az login --tenant $tenantid --service-principal --username $clientid --password $clientsecret # --allow-no-subscriptions
 
-az keyvault create --resource-group "youtube" --name "kv1youtube321"
+az login --help
